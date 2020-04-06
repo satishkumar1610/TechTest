@@ -1,0 +1,26 @@
+﻿@model TechTest.Models.Person
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>AKQA | Dot Net Tech Challenge</h2>
+<hr />
+@using (Html.BeginForm("Person", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    <div class="row">
+        <div class="col-md-4 form-group">
+            <label for="Name">Name</label>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @maxlength = "30", @placeholder = "Full name" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-4">
+            <label for="Amount">Amount</label>
+            @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", @maxlength = "13", @placeholder = "Number i.e 123.45" })
+            @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-4 form-group">
+            <button id="btnSubmit" type="submit" class="btn btn-primary" style="margin-top: 24px;">Submit</button>
+        </div>
+    </div>
+}

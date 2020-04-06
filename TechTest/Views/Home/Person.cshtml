@@ -1,0 +1,21 @@
+﻿@model TechTest.Models.Person
+@{
+    ViewBag.Title = "Person Detail";
+}
+
+<h2>AKQA | Dot Net Tech Challenge</h2>
+<hr />
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <strong>Name: </strong> @Model.Name
+        </div>
+        <div class="col-md-12 form-group">
+            <strong>Amount: </strong> @Model.AmountInWord.ToUpper()
+        </div>
+        <div class="col-md-8">
+            <a href="~/Home/" class="btn btn-default pull-right">Back to home</a>
+        </div>
+    </div>
+}
